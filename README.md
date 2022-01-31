@@ -1,1 +1,1 @@
-# Popeye-Docker-Epitech-DevOps
+# Popeye Docker / Epitech DevOps
