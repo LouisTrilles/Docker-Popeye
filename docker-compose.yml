@@ -32,6 +32,9 @@ services:
     restart: always
     networks:
       - back-tier
+    environment:
+      - REDIS_HOSTNAME=redis
+      - DB_HOSTNAME=db
 
   db:
     image: postgres:13.0
@@ -52,6 +55,9 @@ services:
       - "5001:80"
     networks:
       - result-tier
+    environment:
+      - PORT_RESULT=80
+      - DB_HOSTNAME_RESULT=db
 
 volumes:
   db-data:

@@ -8,8 +8,8 @@ import org.json.JSONObject;
 class Worker {
   public static void main(String[] args) {
     try {
-        Jedis redis = connectToRedis("redis");
-        Connection dbConn = connectToDB("db");
+        Jedis redis = connectToRedis(System.getenv("REDIS_HOSTNAME"));
+        Connection dbConn = connectToDB(System.getenv("DB_HOSTNAME"));
 
         System.err.println("Watching vote queue");
 
