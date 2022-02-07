@@ -38,6 +38,25 @@ Delete all containers (including volumes, images):
   docker system prune -a --volumes
 ```
 
+## Result Epitech
+
+| Images        | Build and test           | Percentage  |
+| ------------- |:-------------:| -----:|
+| Poll     | ✔️ | 100% |
+| Result     | ✔️      |   100% |
+| Worker | ✔️ |     100% |
+
+| Docker Compose        | Build and test           | Percentage  |
+| ------------- |:-------------:| -----:|
+| Service poll     | ✔️ | 100% |
+| Service redis      | ✔️      |   100% |
+| Service worker | ✔️      |    100% |
+| Service db | ✔️      |    100% |
+| Service result | ✔️      |    100%|
+| Volumes | ✔️      |    100%|
+| Networks |✔️     |    100%|
+
+
 
 ## 📬 Contact
 
