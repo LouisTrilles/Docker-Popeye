@@ -6,4 +6,4 @@ RUN mvn dependency:resolve && mvn package
 FROM openjdk:8-jre-alpine
 EXPOSE 80
 COPY --from=builder /app/target/worker-jar-with-dependencies.jar .
-CMD ["java", "-jar", "worker-jar-with-dependencies.jar"]
+CMD java -jar worker-jar-with-dependencies.jar
