@@ -38,7 +38,7 @@ Delete all containers (including volumes, images):
   docker system prune -a --volumes
 ```
 
-## Result Epitech
+## Result of my.epitech.eu
 
 | Images        | Build and test           | Percentage  |
 | ------------- |:-------------:| -----:|
