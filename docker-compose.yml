@@ -1,6 +1,18 @@
 version: "3"
 services:
 
+  db:
+    image: postgres:13.0
+    restart: always
+    networks:
+      - result-tier
+      - back-tier
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - "./schema.sql:/docker-entrypoint-initdb.d/init.sql"
+    environment:
+      - "POSTGRES_PASSWORD=password" 
+      
   poll:
     build: ./poll
     restart: always
@@ -34,19 +46,7 @@ services:
       - back-tier
     environment:
       - REDIS_HOSTNAME=redis
-      - DB_HOSTNAME=db
-
-  db:
-    image: postgres:13.0
-    restart: always
-    networks:
-      - result-tier
-      - back-tier
-    volumes:
-      - db-data:/var/lib/postgresql/data
-      - "./schema.sql:/docker-entrypoint-initdb.d/init.sql"
-    environment:
-      - "POSTGRES_PASSWORD=password"    
+      - DB_HOSTNAME=db   
 
   result:
     build: ./result
